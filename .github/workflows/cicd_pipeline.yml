@@ -17,9 +17,9 @@ jobs:
       - name: Deploy to Production via SSH
         uses: appleboy/ssh-action@v1.0.3
         with:
-          host: 20.49.49.79
-          username: Agile
-          password: Agilpermana72
+          host: "20.49.49.79"
+          username: "Agile"
+          password: "Agilpermana72"
           # Uncomment if your SSH port is different
           # port: 22
           script: |
