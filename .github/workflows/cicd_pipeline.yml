@@ -1,0 +1,23 @@
+name: CICD Pipeline Dev To Production
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  db_cicd:
+    name: Database CICD
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.2.2 # Mengambil kode dari repositori
+      - name: SSH Action
+        uses: appleboy/ssh-action@v0.1.6 # Digunakan untuk mengeksekusi perintah SSH
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USER }}
+          key: ${{ secrets.PASSWORD }}
+        #   port: 22
+          script: |
+            echo "Deploying to production server..."
