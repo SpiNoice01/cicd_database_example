@@ -17,7 +17,7 @@ jobs:
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
-          key: ${{ secrets.PASSWORD }}
+          password: ${{ secrets.PASSWORD }}
           #   port: 22
           script: |
             echo "Deploying to production server..."
