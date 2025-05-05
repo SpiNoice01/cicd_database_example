@@ -16,8 +16,8 @@ jobs:
         uses: appleboy/ssh-action@v0.1.6 # Digunakan untuk mengeksekusi perintah SSH
         with:
           host: ${{ secrets.HOST }}
-          username: ${{ secrets.USER }}
+          username: ${{ secrets.USERNAME }}
           key: ${{ secrets.PASSWORD }}
-        #   port: 22
+          #   port: 22
           script: |
             echo "Deploying to production server..."
