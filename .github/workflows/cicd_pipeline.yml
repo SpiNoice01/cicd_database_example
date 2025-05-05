@@ -20,6 +20,15 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
-          #   port: 22
+          # Uncomment the following line if a custom port is required
+          # port: 22
           script: |
             echo "Deploying to production server..."
+            # Add your deployment commands here
+            cd /path/to/your/project
+            git pull origin main
+            docker-compose down
+            docker-compose up -d --build
+
+      - name: Notify Deployment Success
+        run: echo "Deployment to production server completed successfully."
